@@ -289,8 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function redirectToWhatsApp() {
   const phoneNumber = "917569042554"; // WhatsApp number (without +)
   const message = encodeURIComponent("Hello, I want to place an order.");
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
+  // const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+  const whatsappURL = "https://forms.gle/9ZtQjn3d8N9GQTAH7";
   window.location.href = whatsappURL;
 }
 
