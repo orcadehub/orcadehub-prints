@@ -15,7 +15,7 @@ const data = {
       title: "T-Shirt two side print",
       rating: 5,
       reviews: 219,
-      currentPrice: "₹149",
+      currentPrice: "₹129",
       originalPrice: "₹299",
     },
     // {
@@ -129,7 +129,7 @@ const data = {
       title: "Cup with one image and text",
       rating: 5,
       reviews: 259,
-      currentPrice: "₹129",
+      currentPrice: "₹119",
       originalPrice: "₹249",
     },
     // {
@@ -147,7 +147,7 @@ const data = {
       title: "Cup with 2 images",
       rating: 5,
       reviews: 22,
-      currentPrice: "₹149",
+      currentPrice: "₹129",
       originalPrice: "₹299",
     },
   ],
@@ -241,29 +241,30 @@ function displayProducts(category) {
 
   data[category].forEach((product) => {
     e.innerHTML += `
-        <div class="product-card">
-            <div class="product-image-container">
-              <img src="${product.image}" alt="${
-      product.title
-    }" class="product-image">
-              <div class="image-overlay"></div>
+    <div class="product-card-wrapper" style="display: flex; justify-content: center; margin-bottom: 20px;">
+      <div class="product-card" style="max-width: 300px; width: 100%;">
+          <div class="product-image-container">
+            <img src="${product.image}" alt="${product.title}" class="product-image">
+            <div class="image-overlay"></div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3 class="product-title">${product.title}</h3>
+            <div class="product-rating">
+              <div class="stars">${generateStars(product.rating)}</div>
+              <span class="review-count">(${product.reviews})</span>
             </div>
-            <div class="product-info">
-              <span class="product-category">${product.category}</span>
-              <h3 class="product-title">${product.title}</h3>
-              <div class="product-rating">
-                <div class="stars">${generateStars(product.rating)}</div>
-                <span class="review-count">(${product.reviews})</span>
-              </div>
-              <div class="product-price">
-                <span class="current-price">${product.currentPrice}</span>
-                <span class="original-price">${product.originalPrice}</span>
-              </div>
+            <div class="product-price">
+              <span class="current-price">${product.currentPrice}</span>
+              <span class="original-price">${product.originalPrice}</span>
             </div>
+          </div>
           <button class="add-to-cart-butto" onclick="redirectToWhatsApp()">
-  <i class="fas fa-shopping-cart"></i> Buy Now
-</button>
-        </div>`;
+            <i class="fas fa-shopping-cart"></i> Buy Now
+          </button>
+      </div>
+    </div>`;
+  
   });
   // Update active button styling dynamically
   document
